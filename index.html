@@ -33,6 +33,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    min-height: -webkit-fill-available;
     position: relative;
   }
 
@@ -318,23 +319,17 @@
   }
 
   @media (max-width: 480px) {
-    .form-wrap { max-width: 300px; }
+    .form-wrap { max-width: 90vw; }
     .footer { display: none; }
-    .wordmark { font-size: clamp(4.5rem, 22vw, 8rem); }
+    .wordmark { font-size: clamp(4.5rem, 20vw, 8rem); }
     .eyebrow {
       font-size: 0.48rem;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.15em;
       white-space: nowrap;
     }
-    .content {
-      margin-top: -8vh;
-    }
-    .terrain {
-      height: 18vh;
-    }
-    .horizon-line {
-      bottom: 17vh;
-    }
+    .terrain { height: 18vh; }
+    .horizon-line { bottom: 17vh; }
+    html { height: -webkit-fill-available; }
   }
 </style>
 </head>
