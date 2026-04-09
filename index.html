@@ -218,6 +218,11 @@
   .nav-email:hover { color: var(--cream); }
   .nav-email.copied { color: var(--rust); }
 
+  @media (max-height: 700px) {
+    .badge { display: none; }
+    #hero { padding-top: 5rem; }
+  }
+
   @media (max-width: 640px) {
     nav { padding: 1.5rem; }
     .nav-links { display: none; }
@@ -434,7 +439,7 @@
 
 <!-- Footer -->
 <div class="footer-strip">
-  <div class="footer-strip-l">Culiacán · Sinaloa · México<br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f396808786979a9cb3879b969f929d9795929f9fdd909c9e">[email&#160;protected]</a> · 663 540 2908</div>
+  <div class="footer-strip-l">Culiacán · Sinaloa · México<br><span class="nav-email" onclick="copyEmail(this)">estudio@thelandfall.com</span> · 663 540 2908</div>
   <div class="footer-strip-r">thelandfall.com</div>
 </div>
 
