@@ -208,6 +208,16 @@
   @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
   @keyframes scrollLine { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
 
+  .nav-email {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: rgba(240,235,224,0.6); padding: 0.5rem 0.9rem;
+    cursor: pointer; transition: color 0.3s;
+    display: inline-block; position: relative;
+  }
+  .nav-email:hover { color: var(--cream); }
+  .nav-email.copied { color: var(--rust); }
+
   @media (max-width: 640px) {
     nav { padding: 1.5rem; }
     .nav-links { display: none; }
@@ -429,6 +439,19 @@
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+  function copyEmail(el) {
+    navigator.clipboard.writeText('estudio@thelandfall.com').then(() => {
+      const orig = el.textContent;
+      el.textContent = '✓ copiado';
+      el.classList.add('copied');
+      setTimeout(() => {
+        el.textContent = orig;
+        el.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
   const sections = document.querySelectorAll('.snap-section');
   const dots = document.querySelectorAll('.dot');
   const nav = document.getElementById('mainNav');
